@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sellow Copy & Deep Copy </h1>
+    <h3 style="text-align: center;color: black;">Sellow Copy</h3>
+     <p>  A shallow copy is a copy that only goes one level deep. In other words, it copies the object and all its 
+properties, but any nested objects or arrays will stillreference the same memory location as the original 
+object. It means that if you make changes to the nestedobject, it will also affect the original object, 
+as well as the copied object.
+    </p>
+    <h3 style="text-align: center;color: black;">Deep copy</h3>
+        
+       <p> A deep copy is a copy that creates a new object with new memory locations for all of its properties 
+        and nested objects or arrays. It means that if you make changes to thecopied object or any of its  
+        nested objects or arrays,it will not affect the original object
+        we use JSON.stringify() to convert originalObject to a JSON string, and then use JSON.parse() to convert
+         that string back to a new object deepCopy.It creates a deep copy of originalObject.
+         
+    </p>
+    <script>
+
+    
+//Shallow & deep copy//
+
+let student={
+    Rollno:10009,
+    Name:"Virat",
+    course:"MCA",
+    Address:"Lucknow"
+}
+console.log(student);
+//shallow copy
+let newstudent=student
+console.log(newstudent);
+// after modifecation//
+newstudent.Rollno=100010
+newstudent.marks=780
+console.log(student);
+console.log(newstudent);
+
+//deep copy//
+let teacher={
+    id:1001,
+    Name:"Rohit",
+    department:"MCA",
+    Address:"Kanpur"
+}
+console.log(teacher);
+let newteacher= JSON.parse(JSON.stringify (teacher));//Deep copy
+console.log(newteacher);
+// after modifecation//
+newteacher.id=10005,
+newteacher.teachsubject="java ,wabdevlopment"
+console.log(teacher);
+console.log(newteacher);
+
+</script>
+</body>
+</html>

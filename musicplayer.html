@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />/
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: rgb(217, 11, 11);
+        background: linear-gradient(
+          265deg,
+          rgba(217, 11, 11, 1) 30%,
+          rgba(213, 182, 182, 1) 100%
+        );
+
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      }
+      #main {
+        background-color: azure;
+        border: 5px solid black;
+        height: 500px;
+        width: 400px;
+        border-radius: 20%;
+
+        box-shadow: 2px 2px 2px 2px rgb(153, 188, 223);
+
+        /* justify-content: center;
+align-items: center;
+display: flex; */
+      }
+      #music {
+        display: block;
+        border-radius: 50%;
+        height: 150px;
+        width: 150px;
+        margin-top: 20%;
+        margin-left: 31%;
+
+        /* animation: rotation 5s linear infinite; */
+      }
+
+      /* @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      } */
+
+      #button img {
+        height: 50px;
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div1
+        ><center><h1>Music Player</h1></center>
+      </div1>
+
+      <img
+        src="playmusic.jpg"
+        alt=""
+        id="music"
+        
+        class="music"
+      />
+<br>
+<br>
+      <div><hr ><br>
+        <br>
+      
+      </div>
+      <center>
+        <span>00:00</span><input type="range" style="width: 200px" /><span
+          >00:00</span
+        >
+      </center>
+      <div1 id="button">
+        <img
+          src="left and right button.jpeg"
+          alt=""
+          style="margin-left: 30%; rotate: 180deg"
+        />
+        <img src="play button.jpeg" alt="" id="buttonstop" onclick="a()" class="play" />
+        <img src="left and right button.jpeg" alt="" />
+      </div1>
+    </div>
+
+    <script>
+      var img = document.getElementById("buttonstop");
+      var music=document.getElementById("music");
+      const song=new Audio("Kamlee - Sarrb.mp3")
+var index=0;
+
+
+
+const element=document.getElementById("music");
+       
+       const animation=element.animate(
+
+       [
+       {
+         transform: 'rotate(0deg)'
+       },
+      {
+         transform:'rotate(360deg)'
+       },
+     
+     ],
+     {
+duration:10000,
+iterations:Infinity
+
+     }
+
+       )
+
+         
+      function a() {
+
+
+
+        
+       
+        
+        if ((index==1)) {
+          img.src = "play button.jpeg";
+          music.src = "playmusic.jpg";
+          animation.pause();
+          song.pause();
+          
+          
+          index=0;
+        } 
+        else{
+          img.src = "pause.jpg";
+          music.src = "https://hometoys.com/wp-content/uploads/2021/07/music-player.png";
+          animation.play();
+          
+          song.play();
+         
+          index=1;
+        }}
+        
+    </script>
+  </body>
+</html>
